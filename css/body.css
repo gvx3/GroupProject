@@ -1,4 +1,67 @@
 .createYourTour{
-    background-image: url("images/background.jpg");
+    
     background-size: cover;
+    padding-top: 12%;
+    padding-bottom: 12%;
+    color: #4A4A4A;
+} 
+.ourMission{
+    text-align: center;
+    background-color: #2D3F53;
+    color: white;
+    padding: 50px;
+}
+.uselessBigImage{
+    background-size: cover;
+    margin-top: 0px;
+    padding-top: 12%;
+    padding-bottom: 12%;
+}
+.firstpage{
+    padding-left: 100px;
+}
+.howItWorkLogo{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #F8F7F2; 
+    color: #4A4A4A;
+}
+.youarehere{
+    background-color: #E9E2D3;
+    background-size: cover;
+    text-align: center;
+    color: #4A4A4A;
+}
+.button {
+    background-color: #F67D55;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+.button1 {
+    background-color: #F67D55; 
+    color: white; 
+    border: none;
+}
+.button1:hover {
+    background-color: rgb(172, 87, 59);
+    color: white;
+    border: none;
+}
+#textHowItWork{
+    padding-bottom: 10px;
+}
+#ButtonFirstPage{
+    padding-left: 100px; 
+}
+#homepage2{
+    height: 90%;
+    width: 50%;
 }

@@ -11,42 +11,14 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="cssnav/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/body.css">
-
     <style>
         .createYourTour{
             background-image: url("images/background.jpg");
-            background-size: cover;
-            padding-top: 12%;
-            padding-bottom: 12%;
-            color: #4A4A4A;
-        } 
-        .ourMission{
-            text-align: center;
-            background-color: #2D3F53;
-            color: white;
-            padding: 50px;
         }
         .uselessBigImage{
             background-image: url("images/homepage1.jpg");
-            background-size: cover;
-            margin-top: 0px;
-            padding-top: 12%;
-            padding-bottom: 12%;
-        }
-        .howItWorkLogo{
-            padding-top: 50px;
-            padding-bottom: 50px;
-            background-color: #F8F7F2; 
-            color: #4A4A4A;
-        }
-        .youarehere{
-            background-color: #E9E2D3;
-            background-size: cover;
-            text-align: center;
         }
     </style>
-
-
     <title>Celavi!</title>
 </head>
 
@@ -73,12 +45,13 @@
     </nav>
 
     <div class="jumbotron jumbotron-fluid mb-0 createYourTour">
-
-        <h1 class="display-1"><i><b>A day off</b></i></h1>
-        <h1 class="display-2"><i><b>for the always on</b></i></h1>
-        <p class="lead">
-            <a class="btn" href="#" role="button">Book now</a>
-        </p>
+        <div id="">
+            <h1 class=" firstpage display-2"><i><b>A day off</b></i></h1>
+            <h1 class=" firstpage display-3"><i><b>for the always on</b></i></h1>
+            <div id="ButtonFirstPage">
+                <button class="button button1">Book your trip now</button>
+            </div>
+        </div>
     </div>
     <div class="ourMission ">
         <div>
@@ -94,7 +67,7 @@
     </div>
     <div class="container-fluid">
         <div class="howItWorkLogo">
-            <h1 class="display-4"><b><i>Show you how my awsome website work</i></b></h1>
+            <h1 class="display-4" id="textHowItWork"><b><i>Show you how my awsome website work</i></b></h1>
             <div class="container">
                 <div class="row">
                     <div class="col-md stepWork">
@@ -149,13 +122,13 @@
     </div>
 
     <div class="jumbotron jumbotron-fluid youarehere">
-        <h1 class="display-4">You are still here</h1>
-        <a class="button" href="#">Use my website now</a>
+        <h3><b>Ready to getaway? Book your trip now</b></h3>
+        <button class="button button1" href="#">Use my website now</button>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid almostBottom">
         <div class="row">
             <div class="col-8">
-                Picture of Hong Anh go here
+                <img id="homepage2" src="images/homepage2.jpg" alt="sea">
             </div>
             <div class="col-4">
                 <div class="row">

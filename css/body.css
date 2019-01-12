@@ -24,6 +24,8 @@
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #F8F7F2; 
+    padding-left: 0px;
+    padding-right: 0px;
     color: #4A4A4A;
 }
 .youarehere{
@@ -31,6 +33,9 @@
     background-size: cover;
     text-align: center;
     color: #4A4A4A;
+}
+.almostBottom{
+    padding-bottom:30px;
 }
 .button {
     background-color: #F67D55;
@@ -57,11 +62,13 @@
 }
 #textHowItWork{
     padding-bottom: 10px;
+    padding-left: 15px;
 }
 #ButtonFirstPage{
     padding-left: 100px; 
 }
-#homepage2{
-    height: 90%;
-    width: 50%;
+footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #2D3F53;
 }

@@ -1,0 +1,139 @@
+
+
+.paral {
+    min-height: 600px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* Paragraph for Parallax Section */
+.paral .login_status {
+    font-size: 20px;
+    color: #f5f5f5;
+    text-align: center;
+    line-height: 40px;
+    
+}
+
+.paral p {
+    font-size: 24px;
+    color: #f5f5f5;
+    text-align: center;
+    line-height: 60px;
+}
+
+/* Heading for Parallax Section */
+.paral h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 60px;
+    text-align: center;
+    padding-top: 60px;
+    line-height: 100px;
+}
+
+
+
+.jumbotron {
+    margin-bottom: 0;
+    background: transparent;
+}
+
+.topbar {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: aliceblue;
+    background-color: rgb(80, 80, 80);
+
+}
+
+.topbar1{
+    text-align: center;
+    color: aliceblue;
+    background-color: #17a2b8;
+}
+
+footer{
+    text-align: center;
+    background-color: #17a2b8;
+    color: white;
+}
+
+
+
+
+/* log in message */
+.login_error{
+    color: red;
+}
+
+/* nav bar part */
+
+
+
+
+.ourLogo{
+    height: auto;
+    width: auto;
+    max-height: 60px;
+    max-width: 100px;
+    line-height: 120px;
+    vertical-align: middle;
+}
+
+.loginSignupContainer > * {
+    margin: 0 5px;
+    float: right;
+}
+.loginInfo {
+    max-height: 180px;
+    height: auto;
+}
+.navbar-light .navbar-nav .active> .homeNavLink {
+    color: white;
+    font-size: large;
+}
+
+.navbar-light .navbar-nav .active> .homeNavLink:hover {
+    background: #17a2b8;
+    border-radius: 5px;
+}
+
+.navbar-light .navbar-nav .dropdownNavLink {
+    color: rgb(238, 238, 238);
+    font-size: large;
+}
+
+.jumbotron .homeSearchButton {
+    background: #17a2b8;
+}
+
+.jumbotron .homeSearchButton:hover {
+    background: #126572;
+}
+
+
+
+
+/* navbar part end here */
+
+/* merge nav and jumbotron */
+
+.navbarJumbo{
+    background-size: cover;
+    background-position: top;
+    background-image: url("../images/background2.jpg");
+    
+
+}
+.navbarJumbo h1{
+    color: white;
+
+}
+
+
+
+
+

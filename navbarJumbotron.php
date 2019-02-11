@@ -13,7 +13,7 @@
                 <div class="childNavbar">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link homeNavLink" href="search.html?index=buy">Buy<span class="sr-only">(current)</span></a>
+                            <a class="nav-link homeNavLink" href="NewSearch.php">Buy<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link homeNavLink" href="search.html?index=rent">Rent<span class="sr-only">(current)</span></a>
@@ -113,7 +113,7 @@
                 </div>
                 <form id="homeSearchForm" class="form-inline my-2 my-lg-0 form-horizontal">
                     <input id="homeSearch" class="form-control mr-sm-2 bigInputField" type="search" placeholder="Address" aria-label="Search" style="width: 500px;">
-                    <a href="#" id="homeSearchButton"><button class="btn my-2 my-sm-0 " type="submit">Search</button></a>
+                    <a href="" id="homeSearchButton"><button class="btn my-2 my-sm-0 " type="submit">Search</button></a>
                     
                 </form>
             </div>

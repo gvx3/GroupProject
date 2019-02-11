@@ -14,6 +14,7 @@
     <!-- Custom made CSS -->
     <link rel="stylesheet" href="OurCss/ourStyle.css">
     <link rel="stylesheet" href="OurCss/signup.css">
+    <link rel="stylesheet" href="OurCss/searchForm.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -22,7 +23,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
     <script src="OurJs/OurScript.js"></script>
-    <script src="js/index.js"></script>
+    
 
 </head>
 

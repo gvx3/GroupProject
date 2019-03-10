@@ -13,7 +13,7 @@ if (isset($_POST['signup-submit'])) {
     $phone =  mysqli_real_escape_string($conn, $_POST['phone']) ;
     $city =  mysqli_real_escape_string($conn, $_POST['city']) ;
 
-
+    
 
     //ERROR handlers
     //Check for empty fields

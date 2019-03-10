@@ -1,0 +1,45 @@
+echo $sqlText;
+
+$sqlStatement = mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($sqlStatement, $sqlText)) {
+    echo "fuck prepare";
+    echo mysqli_error($conn);
+}
+else{
+    echo $city;
+    mysqli_stmt_bind_param($sqlStatement, "s", $city);
+    $successIs = mysqli_stmt_execute($sqlStatement);
+    // echo mysqli_stmt_store_result($sqlStatement);
+    
+
+    // $nRow = mysqli_stmt_num_rows($sqlStatement);
+    // echo "number of row is: " . strval($nRow);
+
+    // $result = mysqli_stmt_get_result($sqlStatement);
+    
+    $row = mysqli_stmt_fetch($sqlStatement);
+    $nRow = mysqli_stmt_num_rows($sqlStatement);
+    echo $nRow;
+    while(){
+        
+        $rowReturned[] = array(
+                "id" => $row['id'],
+                "title" => $row['title'],
+                "price " => $row['price'],
+                "area" => $row['area'],
+                "address" => $row['address'],
+                "image" => $row['imageURL']
+        ); 
+        echo "dit nhau de";
+    }
+    echo json_encode($rowReturned);
+    
+}
+
+
+
+
+mysqli_stmt_close($sqlStatement);
+mysqli_close($conn);
+// //exit;
+

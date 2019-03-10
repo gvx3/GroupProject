@@ -64,6 +64,66 @@ var normalize = function( term ) {
     return ret;
 };
 
+function enablePagination(nItems){
+    var limitPerPage = 10;
+    $('#page .resultReturnedCell:gt(' +(limitPerPage - 1) + ') ').hide();
+    var totalPages = Math.round(nItems/limitPerPage);
+    $(".pagination").append("<li class='current-page active'><a href='javascript:void(0)'>" + 1 + "</a></li>");
+
+    //Append the page number
+    for(var i = 2; i <= totalPages; ++i){
+        $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li>");
+    }
+
+    // Add next button after all the page numbers  
+    $(".pagination").append("<li id='next-page'><a href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo;</span></a></li>");
+    //display new items based on the page number
+
+    //Click on a page
+    $(".pagination li.current-page").on("click", function(){
+        alert("page + " + $(this).index() + " clicked");
+        if($(this).hasClass('active')) {
+            return false
+        }
+        else {
+            var currentPage = $(this).index();
+            $(".pagination li").removeClass('active'); //Remove all active class
+            $(this).addClass('active');
+            $("#page .resultReturnedCell").hide();
+
+            var totalItemToThisPage = limitPerPage * currentPage;
+            for(var i = totalItemToThisPage - limitPerPage; i < totalItemToThisPage; ++i){
+                $("#page .resultReturnedCell:eq(" + i + ")").show();
+            }
+        }
+    });
+
+    $("#next-page").on("click", function(){
+        var currentPage = $(".pagination li.active").index();
+        
+        if(currentPage === totalPages) {
+            alert("This is the last page");
+            return false;
+        }
+        else{
+            currentPage++;
+            $(".pagination li").removeClass('active');
+            $("#page .resultReturnedCell").hide();
+
+            var totalItemToThisPage = limitPerPage * currentPage;
+            for(var i = totalItemToThisPage - limitPerPage; i < totalItemToThisPage; ++i){
+                $("#page .resultReturnedCell:eq(" + i + ")").show();
+            }
+
+            $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
+        }
+      }
+
+    );
+
+
+
+}
 //An dep trai
 
 
@@ -126,17 +186,44 @@ $(document).ready(function () {
         var inputs = $(this).find("input, select, button, textarea");
         //Serialize data
         var serializedData = $(this).serialize();
-
+        console.log(serializedData)
         //Disable inputs during the request
         inputs.prop("disabled", true);
         searchRequest = $.ajax({
-            type: "post",
+            method: "post",
             url: "includes/LoadSearchResult.inc.php",
             data: serializedData
         });
 
         searchRequest.done(function (response, textStatus, jqXHR){
             //do the things with response here
+            console.log("Me done");
+            //console.log(response);
+            response = JSON.parse(response);
+            for(var i = 0; i < response.length; ++i){
+                var id = response[i].id;
+                var title = response[i].title;
+                var price = response[i].price;
+                var area = response[i].area;
+                var address = response[i].address;
+                var imageLink = response[i].image;
+                var divResult = '<div class="row resultReturnedCell">' +
+                                    '<a href="detailPage.php">' +
+                                        '<div class="row resultImageContainer">' + 
+                                            '<img src="' + imageLink + '" alt="Image goes here">' +
+                                        '</div>' +
+                                        '<div class="row resultInfoContainer">'+
+                                            '<h5 class="resultTitle">' + title  + '</h5>' +
+                                            '<h3 class="resultPrice">' + price + '</h3>' +
+                                            '<p class="resultArea">' + area + '</p>' +
+                                            '<p class="resultAddress">' + address + '</p>' +
+                                        '</div>' +
+                                    '</a>' +
+                                '</div>';
+                $("#page").append(divResult);
+                                
+            }
+            enablePagination(response.length);
         });
         searchRequest.always(function () {
             inputs.prop("disabled", false);
@@ -145,35 +232,7 @@ $(document).ready(function () {
         //Get all the field
       });
     
-      /*
-    $("#searchForm").submit(function (event) {
-        event.preventDefault();
-        var cityName = $("#cityListInput").val();
-        var address = $("#addressInput").val();
-        var minPrice = $("#minPrice").val();
-        var maxPrice = $("#maxPrice").val();
-        // nBedRoom is string 1+, 2+, ... 
-        var nBedroom = $("#Bedroom ").val(); 
-        // Create a JSON to contain all check boxes value
-        var allCheckBoxes = [];
-        $("input[type=checkbox]").each(function () {
-            currentValue = this.checked ? true:false;
-            theID = this.id;
-            theObject = {};
-            theObject[theID] = currentValue;
-            allCheckBoxes.push(theObject);
-        });
-        console.log(allCheckBoxes);
-        $(".container.resultReturned").load("includes/LoadSearchResult.inc.php", {
-            // php variables are on the left
-            cityName: cityName,
-            address: address,
-            minPrice: minPrice
-            maxPrice: maxPrice,
-            
-        });
-    });
-    */
+      
 
     //Function used for test only
     
@@ -221,8 +280,59 @@ $(document).ready(function () {
             }) );
         }
     });
+
+    //pagination part
     
 
+
+    // $("#next-page").on("click", function(){
+    //     var currentPage = $(".pagination li.active").index();
+        
+    //     if(currentPage === totalPages) {
+    //         alert("This is the last page");
+    //         return false;
+    //     }
+    //     else{
+    //         currentPage++;
+    //         $(".pagination li").removeClass('active');
+    //         $("#page .resultReturnedCell").hide();
+
+    //         var totalItemToThisPage = limitPerPage * currentPage;
+    //         for(var i = totalItemToThisPage - limitPerPage; i < totalItemToThisPage; ++i){
+    //             $("#page .resultReturnedCell:eq(" + i + ")").show();
+    //         }
+
+    //         $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
+    //     }
+    //   }
+
+    // );
+
+    // $("#previous-page").on("click", function(){
+    //     var currentPage = $(".pagination li.active").index();
+        
+    //     if(currentPage === 1) {
+    //         alert("This is the First page");
+    //         return false;
+    //     }
+    //     else{
+    //         currentPage--;
+    //         $(".pagination li").removeClass('active');
+    //         $("#page .resultReturnedCell").hide();
+
+    //         var totalItemToThisPage = limitPerPage * currentPage;
+    //         for(var i = totalItemToThisPage - limitPerPage; i < totalItemToThisPage; ++i){
+    //             $("#page .resultReturnedCell:eq(" + i + ")").show();
+    //         }
+
+    //         $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
+    //     }
+    //   }
+
+    // );
+
+    
+    
     
     // An dep trai
 

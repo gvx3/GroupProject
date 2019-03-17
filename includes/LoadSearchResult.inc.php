@@ -57,7 +57,7 @@ if("" != trim($_POST['maxPrice'])){
     $sqlText .="AND price <= " . strval($maxPrice) . " ";
 }
 if("" != trim($_POST['numBedroom'])){
-    $sqlText .="AND bedroom >= " . strval($numBedroom) . " ";
+    $sqlText .="AND bedrooms >= " . strval($numBedroom) . " ";
 }
 
 
@@ -123,7 +123,7 @@ if(isset($_POST['constructionCB'])) {
  
 // }
 
-$nRow = 0;
+
 $sqlStatement = mysqli_stmt_init($conn);
 if($sqlStatement = mysqli_prepare($conn, $sqlText)) {
     mysqli_stmt_bind_param($sqlStatement, "s", $city);

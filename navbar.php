@@ -1,5 +1,3 @@
-<div class="background">
-
 
 <section class="navSection">
     <nav class="navbar navbar-expand-lg navbar-light bg-light ourNav">

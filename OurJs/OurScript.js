@@ -208,7 +208,7 @@ $(document).ready(function () {
                 var address = response[i].address;
                 var imageLink = response[i].image;
                 var divResult = '<div class="row resultReturnedCell">' +
-                                    '<a href="detailPage.php">' +
+                                    '<a href="DetailPage.php?id=' + id + '">' +
                                         '<div class="row resultImageContainer">' + 
                                             '<img src="' + imageLink + '" alt="Image goes here">' +
                                         '</div>' +
@@ -335,6 +335,7 @@ $(document).ready(function () {
     
     
     // An dep trai
+   
 
 });
 

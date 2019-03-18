@@ -207,18 +207,28 @@ $(document).ready(function () {
                 var area = response[i].area;
                 var address = response[i].address;
                 var imageLink = response[i].image;
-                var divResult = '<div class="row resultReturnedCell">' +
-                                    '<a href="DetailPage.php?id=' + id + '">' +
-                                        '<div class="row resultImageContainer">' + 
-                                            '<img src="' + imageLink + '" alt="Image goes here">' +
+                var divResult = '<div class="container resultReturnedCell">' +
+                                    //'<a href="DetailPage.php?id=' + id + '">' +
+                                    '<div class="row">' +
+                                        '<div class="col-4 resultImageContainer">' + 
+                                            '<img class="img-thumbnail img-size" src="' + imageLink + '" alt="Image goes here">' +
                                         '</div>' +
-                                        '<div class="row resultInfoContainer">'+
+                                        '<div class="col-8 resultInfoContainer">'+
                                             '<h5 class="resultTitle">' + title  + '</h5>' +
-                                            '<h3 class="resultPrice">' + price + '</h3>' +
-                                            '<p class="resultArea">' + area + '</p>' +
                                             '<p class="resultAddress">' + address + '</p>' +
+                                            '<div class="row">' +
+                                                '<div class="col content">' + 
+                                                    '<img src="images/savings.png">' + 
+                                                    '<h4 class="resultPrice">' + price + ' Tỷ VND</h4>' +
+                                                '</div>' +
+                                                '<div class="col content">' +
+                                                    '<img src="images/area.png">' + 
+                                                    '<p class="resultArea">' + area + '</p>' +
+                                                '</div>' + 
+                                            '</div>'
                                         '</div>' +
-                                    '</a>' +
+                                    '</div>'
+                                    //'</a>' +
                                 '</div>';
                 $("#page").append(divResult);
                                 

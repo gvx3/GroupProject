@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="OurCss/ourStyle.css">
     <link rel="stylesheet" href="OurCss/signup.css">
     <link rel="stylesheet" href="OurCss/searchForm.css">
+    <link rel="stylesheet" href="OurCss/searchDiv.css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

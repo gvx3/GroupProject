@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+
+.img-size {
+    height: 200px;
+    width: 200px;
+}
+
+.resultReturnedCell {
+    height: 250px;
+    margin: 20px 20px;
+    box-shadow: 3px 3px 30px #9ccbce;
+    border-radius: 8px;
+}
+
+.resultImageContainer {
+    padding: 30px;
+    
+}
+
+.resultInfoContainer {
+    padding: 30px;
+    font-size: 1em;
+}
+
+.content {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.content img {
+    float: left;
+    margin-right: 15px;
+
+}
+
+

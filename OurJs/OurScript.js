@@ -65,18 +65,18 @@ var normalize = function( term ) {
 };
 
 function enablePagination(nItems){
-    var limitPerPage = 10;
+    var limitPerPage = 30;
     $('#page .resultReturnedCell:gt(' +(limitPerPage - 1) + ') ').hide();
     var totalPages = Math.round(nItems/limitPerPage);
-    $(".pagination").append("<li class='current-page active'><a href='javascript:void(0)'>" + 1 + "</a></li>");
+    $(".pagination").append("<li class='current-page page-item'><a class='page-link' href='javascript:void(0)'>" + 1 + "</a></li>");
 
     //Append the page number
     for(var i = 2; i <= totalPages; ++i){
-        $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li>");
+        $(".pagination").append("<li class='current-page page-item'><a class='page-link' href='javascript:void(0)'>" + i + "</a></li>");
     }
 
     // Add next button after all the page numbers  
-    $(".pagination").append("<li id='next-page'><a href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo;</span></a></li>");
+    $(".pagination").append("<li class='page-item' id='next-page'><a class='page-link' href='javascript:void(0)' aria-label='Next'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>Next</span></a></li>");
     //display new items based on the page number
 
     //Click on a page

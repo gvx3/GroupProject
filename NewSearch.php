@@ -17,14 +17,14 @@
         <form action="includes/LoadSearchResult.inc.php" method="POST" id="searchForm">
             <div class="form-group searchFormDiv">
                 <label for="cityListInput"><h5>Địa điểm</h5></label>
-                <input class="form-control" id ="cityListInput" type="text" name="cityName" placeholder="city" required>
+                <input class="form-control" id ="cityListInput" type="text" name="cityName" placeholder="Thành phố" required>
                 <input class="form-control" id ="addressInput" type="text" name="address" placeholder="Đường Xá Quận Huyện">
             </div>
             <div class="form-group searchFormDiv">
                 <label for="minPrice"><h5>Giá</h5></label>
-                <input class="form-control" id ="minPrice" type="number" name="minPrice" placeholder="Minimum (Billion)" min="0">
+                <input class="form-control" id ="minPrice" type="number" name="minPrice" placeholder="Giá thấp nhất (Billion)" min="0">
         
-                <input class="form-control" id ="maxPrice" type="number" name="maxPrice" placeholder="Maximum (Billion)" min="1">
+                <input class="form-control" id ="maxPrice" type="number" name="maxPrice" placeholder="Giá cao nhất (Billion)" min="1">
         
             </div>
             <div class="form-group searchFormDiv">
@@ -117,15 +117,19 @@
     </div>
 
     <div class="container" id="resultContainer">
-        <nav aria-label=...>
-            <ul class= "pagination">
-                <li id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-            </ul>
-        </nav>
-
         <div id="page">
 
         </div>
+        <nav aria-label="page navigation">
+            <ul class= "pagination">
+                <li id="previous-page page-item">
+                    <a class="page-link" href="javascript:void(0)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 <?php
     require 'footer.php';

@@ -200,6 +200,9 @@ $(document).ready(function () {
             console.log("Me done");
             //console.log(response);
             response = JSON.parse(response);
+            if(response.length == 0){
+                $("#page").append("<h2>No results satisfy</h2>");
+            }
             for(var i = 0; i < response.length; ++i){
                 var id = response[i].id;
                 var title = response[i].title;
@@ -208,27 +211,33 @@ $(document).ready(function () {
                 var address = response[i].address;
                 var imageLink = response[i].image;
                 var divResult = '<div class="container resultReturnedCell">' +
-                                    //'<a href="DetailPage.php?id=' + id + '">' +
+                                    
                                     '<div class="row">' +
                                         '<div class="col-4 resultImageContainer">' + 
                                             '<img class="img-thumbnail img-size" src="' + imageLink + '" alt="Image goes here">' +
                                         '</div>' +
-                                        '<div class="col-8 resultInfoContainer">'+
-                                            '<h5 class="resultTitle">' + title  + '</h5>' +
-                                            '<p class="resultAddress">' + address + '</p>' +
-                                            '<div class="row">' +
-                                                '<div class="col content">' + 
-                                                    '<img src="images/savings.png">' + 
-                                                    '<h4 class="resultPrice">' + price + ' Tỷ VND</h4>' +
+                                        
+                                            '<div class="col-8 resultInfoContainer">'+
+                                                '<div class="titleLink">' +
+                                                    '<a href="DetailPage.php?id=' + id + '">' +
+                                                        '<h5 class="resultTitle">' + title  + '</h5>' +
+                                                    '</a>' +
                                                 '</div>' +
-                                                '<div class="col content">' +
-                                                    '<img src="images/area.png">' + 
-                                                    '<p class="resultArea">' + area + '</p>' +
-                                                '</div>' + 
-                                            '</div>'
-                                        '</div>' +
+                                                '<p class="resultAddress">' + address + '</p>' +
+                                                '<div class="row">' +
+                                                    '<div class="col content">' + 
+                                                        '<img src="images/savings.png">' + 
+                                                        '<h4 class="resultPrice">' + price + ' Tỷ VND</h4>' +
+                                                    '</div>' +
+                                                    '<div class="col content">' +
+                                                        '<img src="images/area.png">' + 
+                                                        '<p class="resultArea">' + area + '</p>' +
+                                                    '</div>' + 
+                                                '</div>'
+                                            '</div>' +
+                                        
                                     '</div>'
-                                    //'</a>' +
+                                    
                                 '</div>';
                 $("#page").append(divResult);
                                 

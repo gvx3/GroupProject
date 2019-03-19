@@ -1,6 +1,7 @@
 <?php
     require 'dbHandler.inc.php';
     ini_set('max_execution_time', 90);
+    error_reporting(0);
     function calculateDistance($addressFrom, $addressTo){
         //key
         $apiKey = 'AIzaSyBbr6z-IAFZfOY-_IaKhTMI0FRbLFPYwYQ';
@@ -112,7 +113,7 @@
     
 
     //Now we query all recors having the same city
-    $sqlText = "SELECT * FROM batdongsan where city = ? limit 70";
+    $sqlText = "SELECT * FROM batdongsan where city = ? ORDER BY RAND() limit 70";
     // AN array to store all houses
 
     $allHouses = array();
